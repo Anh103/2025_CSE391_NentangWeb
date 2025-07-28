@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar navbar-light bg-light px-4">
+    <span class="navbar-brand mb-0 h1 font-weight-bold">TLU</span>
+    <ul class="breadcrumb mb-0" style="background-color: transparent;">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Employees</li>
+    </ul>
+</div>
+
+<!-- Main Container -->
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h4 class="font-weight-bold text-primary">Manage <span class="text-dark">Employees</span></h4>
+        <button class="btn btn-success" data-toggle="modal" data-target="#addModal">Add New Employee</button>
+    </div>
+
+    <!-- Table -->
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody id="employeeTable">
+        <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Add Employee Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <form onsubmit="return validateForm(this)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add Employee</h5>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea class="form-control" placeholder="Enter address"></textarea>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" placeholder="Enter phone">
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary">Save</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- JS Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="data.js"></script>
+<script>
+    // Load and render data from data.js
+    const table = document.getElementById('employeeTable');
+    employeeData.forEach(emp => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${emp.name}</td>
+            <td>${emp.email}</td>
+            <td>${emp.address}</td>
+            <td>${emp.phone}</td>
+        `;
+        table.appendChild(row);
+    });
+
+    // Validate Form
+    function validateForm(form) {
+        const inputs = form.querySelectorAll("input, textarea");
+        const name = inputs[0].value.trim();
+        const email = inputs[1].value.trim();
+        const address = inputs[2].value.trim();
+        const phone = inputs[3].value.trim();
+
+        // Kiểm tra rỗng
+        if (!name || !email || !address || !phone) {
+            alert("Tất cả các trường đều bắt buộc nhập!");
+            return false;
+        }
+
+        // Kiểm tra số điện thoại: 10 ký tự, bắt đầu bằng 0
+        const phonePattern = /^0\d{9}$/;
+        if (!phonePattern.test(phone)) {
+            alert("Số điện thoại phải có đúng 10 chữ số và bắt đầu bằng số 0!");
+            return false;
+        }
+
+        // Nếu hợp lệ
+        alert("Thêm nhân viên thành công!");
+        $('#addModal').modal('hide');
+        return false; // để không reload trang
+    }
+</script>
+</body>
+</html>
