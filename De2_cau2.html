@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý giao dịch</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <h2>Quản lý Giao dịch</h2>
+
+  <form id="formGiaoDich" onsubmit="event.preventDefault(); submitForm();">
+    <label for="khachHang">Khách hàng:</label>
+    <input type="text" id="khachHang" name="khachHang" maxlength="30">
+    <span class="error" id="errKH"></span><br>
+
+    <label for="nhanVien">Nhân viên:</label>
+    <input type="text" id="nhanVien" name="nhanVien" maxlength="30">
+    <span class="error" id="errNV"></span><br>
+
+    <label for="soTien">Số tiền:</label>
+    <input type="number" id="soTien" name="soTien">
+    <span class="error" id="errST"></span><br>
+
+    <button type="submit">Thêm giao dịch</button>
+  </form>
+
+  <hr>
+
+  <h3>Danh sách giao dịch</h3>
+  <table border="1" id="bangGiaoDich">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Khách hàng</th>
+        <th>Nhân viên</th>
+        <th>Số tiền</th>
+        <th>Ngày giao dịch</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+     <tr>
+
+          <td>1102</td>
+          <td>Võ Hoài An</td>
+          <td>Mai Thục Anh</td>
+          <td>250 000</td>
+          <td>06 Tháng 06 2024 9:00</td>
+        </tr>
+        <tr>
+
+          <td>1199</td>
+          <td>Hoàng Thị Thắng</td>
+          <td>Nguyễn Văn Hồng</td>
+          <td>600 000</td>
+          <td>06 Tháng 06 2024 9:03</td>
+        </tr>
+        <tr>
+
+          <td>1239</td>
+          <td>Nguyễn Quang Huy</td>
+          <td>Nguyễn Văn Hồng</td>
+          <td>934 000</td>
+          <td>06 Tháng 06 2024 9:10</td>
+        </tr>
+        <tr>
+
+          <td>1677</td>
+          <td>Huỳnh Văn Nam</td>
+          <td>Mai Thục Anh</td>
+          <td>150 000</td>
+          <td>06 Tháng 06 2024 9:20</td>
+        </tr>
+        <tr>
+
+          <td>1439</td>
+          <td>Nguyễn Hồng Minh</td>
+          <td>Mai Thục Anh</td>
+          <td>354 000</td>
+          <td>06 Tháng 06 2024 9:24</td>
+        </tr>
+    </tbody>
+  </table>
+
+  <!-- Link đến script -->
+  <script src="data2.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
