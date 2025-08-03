@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý nhân viên</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style3.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Thanh tiêu đề -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Trường Đại học Thủy Lợi</span>
+        <span class="navbar-brand mb-0 h1">Trang chủ</span>
+        <span class="navbar-brand mb-0 h1">Quản lý cửa hàng</span>
+        <input class="form-control w-25" type="text" placeholder="Nhập nội dung tìm kiếm">
+        <button class="btn btn-success">Tìm kiếm</button>
+    </div>
+</nav>
+
+<!-- Nội dung -->
+<div class="container my-4">
+    <div class="container mt-3">
+  <div class="row align-items-center">
+    <!-- Cột trái -->
+    <div class="col-md-4 d-flex gap-2">
+      <button id="btnAdd" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i> THÊM MỚI
+      </button>
+      <button class="btn btn-light border">
+        <i class="bi bi-upload"></i> XUẤT RA FILE
+      </button>
+    </div>
+
+    <!-- Cột giữa -->
+    <div class="col-md-4">
+      <div class="input-group">
+        <span class="input-group-text"><i class="bi bi-chevron-right"></i></span>
+        <input type="text" class="form-control" placeholder="Tìm kiếm theo Tên">
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+      </div>
+    </div>
+
+    <!-- Cột phải -->
+    <div class="col-md-4 text-end d-flex justify-content-end align-items-center gap-2">
+      <label for="ketqua" class="form-label mb-0">Kết quả</label>
+      <select id="ketqua" class="form-select w-auto">
+        <option>10</option>
+        <option selected>20</option>
+        <option>50</option>
+        <option>100</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+    <!-- Bảng dữ liệu -->
+    <table class="table table-bordered text-center align-middle">
+        <thead class="table-dark">
+  <tr>
+    <th><i class="bi bi-caret-down-square"></i></th>
+    <th>Hành động</th>
+    <th>
+      <i class="bi bi-caret-up-fill"></i>STT<i class="bi bi-caret-down-fill"></i>
+    </th>
+    <th>
+      <i class="bi bi-caret-up-fill"></i>Tên<i class="bi bi-caret-down-fill"></i>
+    </th>
+    <th>
+      <i class="bi bi-caret-up-fill"></i>Họ đệm <i class="bi bi-caret-down-fill"></i>
+    </th>
+    <th>
+     <i class="bi bi-caret-up-fill"></i> Địa chỉ <i class="bi bi-caret-down-fill"></i>
+    </th>
+    <th>
+     <i class="bi bi-caret-up-fill"></i> Hoạt động <i class="bi bi-caret-down-fill"></i>
+    </th>
+  </tr>
+</thead>
+        <tbody>
+            <tr>
+                <td><i class="bi bi-caret-down-square"></i></td>
+                <td>
+        <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></button>
+
+                </td>
+                <td>1</td>
+                <td>Mai</td>
+                <td>Thục Anh</td>
+                <td>23 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</td>
+                <td><i class="bi bi-check-circle text-success"></i></td>
+            </tr>
+            <tr>
+                <td><i class="bi bi-caret-down-square"></i></td>
+                <td>
+        <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></button>
+
+                </td>
+                <td>2</td>
+                <td>Hoàng</td>
+                <td>Sinh Hồng</td>
+                <td>23 Hoàng Đạo Thúy, Thanh Xuân, Hà Nội</td>
+                <td><i class="bi bi-check-circle text-success"></i></td>
+            </tr>
+            <tr>
+            <td><i class="bi bi-caret-down-square"></i></td>
+            <td>
+        <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></button>
+
+            </td>
+            <td>3</td>
+            <td>Tính</td>
+            <td>Mai Trung</td>
+            <td>1411 Đường Láng, Cầu Giấy, Hà Nội</td>
+            <td><i class="bi bi-check-circle text-success"></i></td>
+            </tr>
+            <tr>
+             <td><i class="bi bi-caret-down-square"></i></td>
+            <td>
+        <button class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></button>
+        <button class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i></button>
+        <button class="btn btn-sm btn-danger"><i class="bi bi-x-circle"></i></button>
+
+            </td>
+            
+            <td>4</td>
+            <td>Hồng</td>
+            <td>Nguyễn Văn</td>
+            <td>1411 Đường Láng, Cầu Giấy, Hà Nội</td>
+            <td><i class="bi bi-check-circle text-success"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="d-flex justify-content-end px-3 mb-4">
+  <small class="text-muted">Kết quả 1 đến 4</small>
+</div>
+</div>
+<!-- Footer -->
+ <footer   class="bg-primary text-white py-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6 text-start">
+                <strong>TRƯỜNG ĐẠI HỌC THỦY LỢI</strong><br>
+                175 Tây Sơn, Đống Đa, Hà Nội<br>
+                Điện thoại: (024) 38522201 - Fax: (024) 35633351 <br>
+                Email: phonghcth@tlu.edu.vn
+            </div>
+        </div>
+    </div>
+  </footer>
+<!-- Modal Form -->
+<div class="modal fade" id="addModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="addForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm Nhân viên</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+            <div class="mb-3">
+                <label>Tên</label>
+                <input type="text" class="form-control" name="ten" required>
+            </div>
+            <div class="mb-3">
+                <label>Họ đệm</label>
+                <input type="text" class="form-control" name="hodem" required>
+            </div>
+            <div class="mb-3">
+                <label>Địa chỉ</label>
+                <input type="text" class="form-control" name="diachi" required>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-success">Thêm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script3.js"></script>
+</body>
+</html>

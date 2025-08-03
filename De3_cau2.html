@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Quản lý nhân viên</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+  <h3 class="mb-4">DANH SÁCH NHÂN VIÊN</h3>
+
+  <!-- Nút thêm -->
+  <button id="btnAdd" class="btn btn-primary mb-3">
+    <i class="bi bi-plus-circle"></i> Thêm mới
+  </button>
+
+  <!-- Bảng -->
+  <table class="table table-bordered align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th><i class="bi bi-caret-down-square"></i></th>
+        <th>Hành động</th>
+        <th>STT <i class="bi bi-caret-up-fill"></i><i class="bi bi-caret-down-fill"></i></th>
+        <th>Tên <i class="bi bi-caret-up-fill"></i><i class="bi bi-caret-down-fill"></i></th>
+        <th>Họ đệm <i class="bi bi-caret-up-fill"></i><i class="bi bi-caret-down-fill"></i></th>
+        <th>Địa chỉ <i class="bi bi-caret-up-fill"></i><i class="bi bi-caret-down-fill"></i></th>
+        <th>Hoạt động <i class="bi bi-caret-up-fill"></i><i class="bi bi-caret-down-fill"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Dữ liệu sẽ được thêm bằng jQuery -->
+    </tbody>
+  </table>
+</div>
+
+<!-- Modal thêm -->
+<div class="modal fade" id="addModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form id="addForm">
+        <div class="modal-header">
+          <h5 class="modal-title">Thêm Nhân viên</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="ten">Tên</label>
+            <input type="text" id="ten" class="form-control" name="ten">
+            <div id="errTen" class="text-danger small mt-1"></div>
+          </div>
+          <div class="mb-3">
+            <label for="hodem">Họ đệm</label>
+            <input type="text" id="hodem" class="form-control" name="hodem">
+            <div id="errHodem" class="text-danger small mt-1"></div>
+          </div>
+          <div class="mb-3">
+            <label for="diachi">Địa chỉ</label>
+            <input type="text" id="diachi" class="form-control" name="diachi">
+            <div id="errDiachi" class="text-danger small mt-1"></div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+          <button type="submit" class="btn btn-success">Thêm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="data3.js"></script>
+<script src="script3-2.js"></script>
+</body>
+</html>
